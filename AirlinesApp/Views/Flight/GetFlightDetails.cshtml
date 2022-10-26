@@ -1,0 +1,51 @@
+﻿@model IEnumerable<AirlinesApp.Models.Airline>
+
+@{
+    ViewData["Title"] = "GetFlightDetails";
+}
+
+<h1>GetFlightDetails</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.flightNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Source)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Destination)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fare)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalSeat)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.flightNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Source)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Destination)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fare)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalSeat)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

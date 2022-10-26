@@ -1,0 +1,49 @@
+﻿@model AirlinesApp.Models.BookTicket
+
+@{
+    ViewData["Title"] = "BookTicket";
+}
+
+<h1>BookTicket</h1>
+
+<h4>BookTicket</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddTicketBook">
+            
+            <div class="form-group">
+                <label asp-for="flightNo" class="control-label"></label>
+                <input asp-for="flightNo" class="form-control" />
+                <span asp-validation-for="flightNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PassengerFirstName" class="control-label"></label>
+                <input asp-for="PassengerFirstName" class="form-control" />
+                <span asp-validation-for="PassengerFirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PassengerLastName" class="control-label"></label>
+                <input asp-for="PassengerLastName" class="form-control" />
+                <span asp-validation-for="PassengerLastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="City" class="control-label"></label>
+                <input asp-for="City" class="form-control" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Age" class="control-label"></label>
+                <input asp-for="Age" class="form-control" />
+                <span asp-validation-for="Age" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
